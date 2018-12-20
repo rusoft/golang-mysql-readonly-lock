@@ -1,0 +1,17 @@
+Source: mysql-readonly-lock-go
+Section: database
+Priority: extra
+Maintainer: Sergey Dryabzhinsky <sergey@rusoft.ru>
+Build-Depends: debhelper (>= 7),
+ golang-github-go-sql-driver-mysql-dev | golang-bin-1.11-go | golang-1.10-go | golang-1.9-go,
+ golang-gopkg-ini.v1-dev | golang-bin-1.11-go | golang-1.10-go | golang-1.9-go
+Standards-Version: 3.8.3
+Homepage: http://rusoft.ru
+
+Package: mysql-readonly-lock
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Provides: mysql-hosting-backup
+Description: MySQL for Rusoft - set server in readonly mode
+ Written on Go language.
+ Used in backup scripts by Rusoft.

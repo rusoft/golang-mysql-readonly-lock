@@ -1,0 +1,6 @@
+mysql-readonly-lock-go
+----------------------
+
+Set MySQL-server in readonly mode.
+
+ -- Sergey Dryabzhinsky <sergey@rusoft.ru>  Fri, 21 Dec 2018 00:13:00 +0300

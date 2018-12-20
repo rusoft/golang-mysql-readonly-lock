@@ -1,0 +1,66 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export MAKELEVEL=$(shell grep -c processor /proc/cpuinfo)
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+	touch configure-stamp
+
+build: build-stamp
+
+build-arch:
+# Do nothing
+
+build-indep:
+# Do nothing
+
+build-stamp: configure build-arch build-indep
+	dh_testdir
+	GOPATH=$(CURDIR)/go make
+	touch $@
+
+install: build install-stamp
+install-stamp:
+	dh_testdir
+	dh_testroot
+	dh_installdirs -A
+	dh_install
+	touch $@
+
+clean:
+	dh_testdir
+	if [ -f Makefile ]; then $(MAKE) clean; fi
+	rm -rf $(CURDIR)/go
+	dh_clean
+	rm -f *-stamp
+
+# Build architecture-independent files here.
+binary-indep: install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: install
+# We have nothing to do by default.
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs -a
+	dh_installdocs -a
+	dh_installman -a
+	dh_link -a
+	dh_strip -a
+	dh_compress -a
+	dh_fixperms -a
+	dh_installdeb -a
+	dh_shlibdeps -a
+	dh_gencontrol -a
+	dh_md5sums -a
+	dh_builddeb -a
+
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure
