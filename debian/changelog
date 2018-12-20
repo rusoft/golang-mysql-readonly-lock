@@ -1,4 +1,4 @@
-mysql-readonly-lock-go (20181221.1-0rusoft2~trusty1) trusty; urgency=medium
+mysql-readonly-lock-go (20181221.1-0rusoft3~trusty1) trusty; urgency=medium
 
   * Fix build deps
   * Fix makefile
