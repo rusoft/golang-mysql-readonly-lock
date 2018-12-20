@@ -3,8 +3,9 @@ Section: database
 Priority: extra
 Maintainer: Sergey Dryabzhinsky <sergey@rusoft.ru>
 Build-Depends: debhelper (>= 7),
- golang-github-go-sql-driver-mysql-dev | golang-bin-1.11-go | golang-1.10-go | golang-1.9-go,
- golang-gopkg-ini.v1-dev | golang-bin-1.11-go | golang-1.10-go | golang-1.9-go
+ golang-github-go-sql-driver-mysql-dev | git,
+ golang-github-go-sql-driver-mysql-dev | golang-bin-1.11-go | golang-1.10-go | golang-1.9-go | golang (>= 1.9),
+ golang-gopkg-ini.v1-dev | golang-bin-1.11-go | golang-1.10-go | golang-1.9-go | golang (>= 1.9)
 Standards-Version: 3.8.3
 Homepage: http://rusoft.ru
 

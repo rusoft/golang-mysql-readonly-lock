@@ -21,7 +21,11 @@ build-indep:
 
 build-stamp: configure build-arch build-indep
 	dh_testdir
-	GOPATH=$(CURDIR)/go make
+ifeq (,$(shell dpkg-query -f '$${Version}' -W golang-github-go-sql-driver-mysql-dev))
+	GOPATH=$(CURDIR)/go make fetch build
+else
+	make build
+endif
 	touch $@
 
 install: build install-stamp

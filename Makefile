@@ -1,12 +1,12 @@
 
-all: build
+all: fetch build
 
 fetch:
 	go get -u gopkg.in/ini.v1
 	go get -u github.com/go-sql-driver/mysql
 	touch $@
 
-build: fetch
+build:
 	go build -buildmode=exe -o mysql-readonly-lock main.go
 	touch $@
 
