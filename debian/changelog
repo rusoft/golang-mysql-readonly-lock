@@ -1,3 +1,16 @@
+mysql-readonly-lock-go (20181221.2-0rusoft5~trusty1) trusty; urgency=medium
+
+  * Put go/ini.v1 v1.51.0 and go-mysql-driver v1.4.1 inside sources
+
+ -- Sergey Dryabzhinsky <sergey@rusoft.ru>  Wed, 18 Dec 2019 23:34:26 +0300
+
+mysql-readonly-lock-go (20181221.1-0rusoft4.1~trusty1) trusty; urgency=medium
+
+  * Rebuild with golang-1.13
+  * Compress debs with XZ
+
+ -- Sergey Dryabzhinsky <sergey@rusoft.ru>  Wed, 18 Dec 2019 22:09:28 +0300
+
 mysql-readonly-lock-go (20181221.1-0rusoft4~trusty1) trusty; urgency=medium
 
   * Fix build deps

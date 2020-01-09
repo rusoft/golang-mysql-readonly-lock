@@ -11,21 +11,16 @@ configure-stamp:
 	dh_testdir
 	touch configure-stamp
 
-build: build-stamp
-
 build-arch:
 # Do nothing
 
 build-indep:
 # Do nothing
 
+build: build-stamp
 build-stamp: configure build-arch build-indep
 	dh_testdir
-ifeq (,$(shell dpkg-query -f '$${Version}' -W golang-github-go-sql-driver-mysql-dev))
-	GOPATH=$(CURDIR)/go make fetch build
-else
-	make build
-endif
+	make build_bin
 	touch $@
 
 install: build install-stamp
@@ -39,7 +34,8 @@ install-stamp:
 clean:
 	dh_testdir
 	if [ -f Makefile ]; then $(MAKE) clean; fi
-	rm -rf $(CURDIR)/go
+	rm -rf $(CURDIR)/go/bin
+	rm -rf $(CURDIR)/go/pkg
 	dh_clean
 	rm -f *-stamp
 
@@ -56,14 +52,15 @@ binary-arch: install
 	dh_installdocs -a
 	dh_installman -a
 	dh_link -a
-	dh_strip -a
+#	UPX stores data in comment/note sections
+#	dh_strip -a
 	dh_compress -a
 	dh_fixperms -a
 	dh_installdeb -a
 	dh_shlibdeps -a
 	dh_gencontrol -a
 	dh_md5sums -a
-	dh_builddeb -a
+	dh_builddeb -a -- -Zxz
 
 
 binary: binary-indep binary-arch
