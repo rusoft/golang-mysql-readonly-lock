@@ -1,7 +1,6 @@
-mysql-readonly-lock-go (20200109-0rusoft6~trusty1) trusty; urgency=medium
+mysql-readonly-lock-go (20200109-0rusoft6.1~trusty1) trusty; urgency=medium
 
   * Add ldflags option - strip and reduce size
-  * Add UPX binary compression - more reduce size
   * Put go/ini.v1 v1.51.1 and go-mysql-driver v1.5.0 inside sources
 
  -- Sergey Dryabzhinsky <sergey@rusoft.ru>  Thu, 09 Jan 2020 13:54:08 +0300

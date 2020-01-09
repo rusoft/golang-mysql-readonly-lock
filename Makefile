@@ -8,7 +8,6 @@ fetch:
 
 build_bin:
 	go build -buildmode=exe -ldflags "-w -s" -o mysql-readonly-lock main.go
-	upx -9q mysql-readonly-lock
 	touch $@
 
 clean:
