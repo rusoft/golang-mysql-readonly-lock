@@ -1,3 +1,10 @@
+mysql-readonly-lock-go (20200904-0rusoft7~debian10.1) buster; urgency=medium
+
+  * Put go/ini.v1 v1.60.2 and go-mysql-driver v1.5.0 inside sources
+  * Buils with latest golang-1.15
+
+ -- Sergey Dryabzhinsky <sergey@rusoft.ru>  Fri, 04 Sep 2020 19:22:17 +0300
+
 mysql-readonly-lock-go (20200109-0rusoft6.1~trusty1) trusty; urgency=medium
 
   * Add ldflags option - strip and reduce size

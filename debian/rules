@@ -52,8 +52,7 @@ binary-arch: install
 	dh_installdocs -a
 	dh_installman -a
 	dh_link -a
-#	UPX stores data in comment/note sections
-#	dh_strip -a
+	dh_strip -a
 	dh_compress -a
 	dh_fixperms -a
 	dh_installdeb -a

@@ -3,8 +3,8 @@ Section: database
 Priority: extra
 Maintainer: Sergey Dryabzhinsky <sergey@rusoft.ru>
 Build-Depends: debhelper (>= 7),
- upx-ucl, git, ca-certificates,
- golang-bin-1.13-go | golang (>= 2:1.9),
+ git, ca-certificates,
+ golang-bin-1.15-go | golang (>= 2:1.9),
 Standards-Version: 3.8.3
 Homepage: http://rusoft.ru
 
